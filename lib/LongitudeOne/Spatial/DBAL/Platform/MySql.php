@@ -39,7 +39,7 @@ class MySql extends AbstractPlatform
      */
     public function convertToDatabaseValueSql(AbstractSpatialType $type, $sqlExpr): string
     {
-        return sprintf('ST_GeomFromText(%s)', $sqlExpr);
+        return sprintf('ST_GeomFromText(%s, 4258)', $sqlExpr);
     }
 
     /**
