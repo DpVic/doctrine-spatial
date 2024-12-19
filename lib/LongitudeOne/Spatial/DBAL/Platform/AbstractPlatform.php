@@ -172,10 +172,10 @@ abstract class AbstractPlatform implements PlatformInterface
 
         if (is_a($class, PointInterface::class, true)) {
             if (is_array($value['value']) && isset($value['value'][0], $value['value'][1])) {
-                return new $class($value['value'][0], $value['value'][1], $value['srid'] ?? null);
+                return new $class($value['value'][0], $value['value'][1], $value['srid'] ?? 4258);
             }
         }
 
-        return new $class($value['value'], $value['srid'] ?? null);
+        return new $class($value['value'], $value['srid'] ?? 4258);
     }
 }
